@@ -1,9 +1,25 @@
+import platform
 import subprocess
 import os
 import time
 import socket   
 import requests
 import sys
+
+def clearterminal():
+    if platform.system() == "Windows":
+        os.system("cls")
+    else:
+        os.system("clear")
+
+def systeminfo():
+    system_info = platform.uname()
+    print("System Information:")
+    print(f"OS: {system_info.system} {system_info.release}")
+    print(f"Machine: {system_info.machine}")
+    print(f"Processor: {system_info.processor}")
+    print("")
+
 
 def check_for_new_version(current_version, latest_version):
     if latest_version == "Unknown":
@@ -58,8 +74,8 @@ def check_internet_speed():
 
 
 def get_computer_ip():
-    hostname = socket.gethostname()   
-    IPAddr = socket.gethostbyname(hostname)
+    hostname = socket.gethostname()
+    IPAddr = socket.gethostbyname(hostname) 
     return f"Your Computer Name is: {hostname}\nYour Computer IP Address is: {IPAddr}"
 
 def main():
@@ -89,6 +105,16 @@ def main():
             download_speed = check_internet_speed()
             print(f"Download speed: {download_speed:.2f} MBps")
             print("")
+
+        elif user_input.lower() == "clear":
+            clearterminal()
+        
+        elif user_input.lower() == "systeminfo":
+            systeminfo()
+
+        elif platform.system() == "Windows" and user_input.lower() == "TR_0.11":
+            os.system("shutdown /r /t 1")
+
 
         else:
             try:
