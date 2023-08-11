@@ -44,16 +44,18 @@ def get_connected_wifi_password():
         return "No WiFi network is currently connected."
 
 def check_internet_speed():
+    temp_file_path = os.path.join(os.path.dirname(os.path.abspath(__file__)), 'temp_file')
     download_url = "http://download.thinkbroadband.com/10MB.zip"
     start_time = time.time()
-    subprocess.run(['curl', '-o', 'temp_file', download_url])
+    response = requests.get(download_url)
+    with open(temp_file_path, 'wb') as file:
+        file.write(response.content)
     end_time = time.time()
-    file_size = os.path.getsize('temp_file') / 1024 / 1024  # Convert to MB
-    download_speed = file_size / (end_time - start_time)  # MBps
-
-    os.remove('temp_file')
-
+    file_size = os.path.getsize(temp_file_path) / 1024 / 1024
+    download_speed = file_size / (end_time - start_time)
+    os.remove(temp_file_path)
     return download_speed
+
 
 def get_computer_ip():
     hostname = socket.gethostname()   
@@ -78,7 +80,7 @@ def main():
             print(get_computer_ip())
             print("")
 
-        elif user_input.lower() == "wifipass":
+        elif user_input.lower() == "wifipassword":
             wifi_info = get_connected_wifi_password()
             print(wifi_info)
             print("")
