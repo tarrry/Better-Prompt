@@ -9,10 +9,8 @@ def get_latest_version():
     latest_version = response.json()["tag_name"]
     return latest_version
 
-# Rest of your code ...
-
 def main():
-    current_version = "1.1"  # Your current version
+    current_version = "1.0"  
     latest_version = get_latest_version()
 
     if check_for_new_version(current_version, latest_version):
