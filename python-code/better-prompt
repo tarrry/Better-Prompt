@@ -4,79 +4,49 @@ import time
 import socket   
 import requests
 
-# Def functions for custom commands
-def get_connected_wifi_password():
-    def get_connected_wifi_profile():
-        profile_info = subprocess.check_output(['netsh', 'wlan', 'show', 'interface']).decode('utf-8').split('\n')
-        connected_ssid = None
-        for line in profile_info:
-            if "SSID" in line:
-                connected_ssid = line.split(":")[1].strip()
-                break
-        return connected_ssid
-    
-    
-    connected_ssid = get_connected_wifi_profile()
-    if connected_ssid:
-        results = subprocess.check_output(['netsh', 'wlan', 'show', 'profile', connected_ssid, 'key=clear']).decode('utf-8').split('\n')
-        password = [b.split(":")[1][1:-1] for b in results if "Key Content" in b]
-        if password:
-            return f"Connected WiFi SSID: {connected_ssid}\nPassword: {password[0]}"
+def get_latest_version():
+    response = requests.get("https://api.github.com/repos/Tsuruta-Kurb/better-prompt/releases/latest")
+    latest_version = response.json()["tag_name"]
+    return latest_version
+
+# Rest of your code ...
+
+def main():
+    current_version = "1.1"  # Your current version
+    latest_version = get_latest_version()
+
+    if check_for_new_version(current_version, latest_version):
+        print("There is a new version available!")
+        print(f"Download it from: https://github.com/Tsuruta-Kurb/better-prompt/releases/tag/{latest_version}")
+
+    while True:
+        user_input = input("Better Prompt C:> ")
+
+        if user_input.lower() == "exit":
+            break
+
+        elif user_input.lower() == "myip":
+            print(get_computer_ip())
+            print("")
+
+        elif user_input.lower() == "wifipass":
+            wifi_info = get_connected_wifi_password()
+            print(wifi_info)
+            print("")
+
+        elif user_input.lower() == "internetspeed":
+            download_speed = check_internet_speed()
+            print(f"Download speed: {download_speed:.2f} MBps")
+            print("")
+
         else:
-            return "No password found for the connected WiFi network."
-    else:
-        return "No WiFi network is currently connected."
+            try:
+                result = subprocess.run(user_input, shell=True, text=True, capture_output=True)
+                print(result.stdout)
+                if result.stderr:
+                    print(result.stderr)
+            except subprocess.CalledProcessError as e:
+                print("Error:", e)
 
-
-def check_internet_speed():
-    download_url = "http://download.thinkbroadband.com/10MB.zip"
-    start_time = time.time()
-    subprocess.run(['curl', '-o', 'temp_file', download_url])
-    end_time = time.time()
-    file_size = os.path.getsize('temp_file') / 1024 / 1024  # Convert to MB
-    download_speed = file_size / (end_time - start_time)  # MBps
-
-    os.remove('temp_file')
-
-    return download_speed
-
-# better prompt
-print("""
-██████╗░███████╗████████╗████████╗███████╗██████╗░  ██████╗░██████╗░░█████╗░███╗░░░███╗██████╗░████████╗
-██╔══██╗██╔════╝╚══██╔══╝╚══██╔══╝██╔════╝██╔══██╗  ██╔══██╗██╔══██╗██╔══██╗████╗░████║██╔══██╗╚══██╔══╝
-██████╦╝█████╗░░░░░██║░░░░░░██║░░░█████╗░░██████╔╝  ██████╔╝██████╔╝██║░░██║██╔████╔██║██████╔╝░░░██║░░░
-██╔══██╗██╔══╝░░░░░██║░░░░░░██║░░░██╔══╝░░██╔══██╗  ██╔═══╝░██╔══██╗██║░░██║██║╚██╔╝██║██╔═══╝░░░░██║░░░
-██████╦╝███████╗░░░██║░░░░░░██║░░░███████╗██║░░██║  ██║░░░░░██║░░██║╚█████╔╝██║░╚═╝░██║██║░░░░░░░░██║░░░
-╚═════╝░╚══════╝░░░╚═╝░░░░░░╚═╝░░░╚══════╝╚═╝░░╚═╝  ╚═╝░░░░░╚═╝░░╚═╝░╚════╝░╚═╝░░░░░╚═╝╚═╝░░░░░░░░╚═╝░░░
-      Made By Chilax Studio
-""")
-
-# Input loop
-while True:
-    user_input = input("Better Prompt C:> ")
-
-    if user_input.lower() == "exit":
-        break
-
-    elif user_input.lower() == "myip":
-        print(get_computer_ip())
-        print("")
-
-    elif user_input.lower() == "wifipass":
-        wifi_info = get_connected_wifi_password()
-        print(wifi_info)
-        print("")
-        
-    elif user_input.lower() == "internetspeed":
-        download_speed = check_internet_speed()
-        print(f"Download speed: {download_speed:.2f} MBps")
-        print("")
-    
-    else:
-        try:
-            result = subprocess.run(user_input, shell=True, text=True, capture_output=True)
-            print(result.stdout)
-            if result.stderr:
-                print(result.stderr)
-        except subprocess.CalledProcessError as e:
-            print("Error:", e)
+if __name__ == "__main__":
+    main()
