@@ -55,6 +55,11 @@ def check_internet_speed():
 
     return download_speed
 
+def get_computer_ip():
+    hostname = socket.gethostname()   
+    IPAddr = socket.gethostbyname(hostname)
+    return f"Your Computer Name is: {hostname}\nYour Computer IP Address is: {IPAddr}"
+
 def main():
     current_version = "1.0"  # Your current version
     latest_version = get_latest_version()
