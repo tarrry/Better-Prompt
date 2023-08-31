@@ -187,7 +187,7 @@ def check_for_new_version(current_version, latest_version):
     return False
 
 def get_latest_version():
-    response = requests.get("https://api.github.com/repos/Tsuruta-Kurb/better-prompt/releases/latest")
+    response = requests.get("https://api.github.com/repos/tarrry/better-prompt/releases/latest")
     response_json = response.json()
     latest_version = response_json.get("tag_name", "Unknown")
     return latest_version
