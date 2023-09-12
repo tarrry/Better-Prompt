@@ -237,7 +237,7 @@ def main():
 
     if check_for_new_version(current_version, latest_version):
         print("There is a new version available!")
-        print(f"Download it from: https://github.com/Tsuruta-Kurb/better-prompt/releases/tag/{latest_version}")
+        print(f"Download it from: https://github.com/tarrry/better-prompt/releases/tag/{latest_version}")
 
     while True:
         user_input = input("Better Prompt C:> ")
