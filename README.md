@@ -1,3 +1,5 @@
+# **CURRENTLY BROKEN AND NEEDS FIXING AND UPDATING**
+
 # **Better-Prompt**
 
 Introducing Better Prompt by Chilax Studio, a versatile and innovative terminal emulator designed to enhance your command-line experience. Going beyond the traditional command prompt, Better Prompt offers a range of customizable commands that cater to your unique needs. Whether you're a developer, sysadmin, or power user, Better Prompt empowers you to streamline your workflow and increase productivity. With its user-friendly interface, sleek design, and intuitive navigation, Better Prompt takes the familiar command-line environment to new heights, offering a dynamic and efficient way to interact with your system.
