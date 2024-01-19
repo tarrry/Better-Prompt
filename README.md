@@ -17,6 +17,6 @@ Introducing Better Prompt by Chilax Studio, a versatile and innovative terminal 
 **A:** At the moment, Better Prompt does not officially support adding external custom commands directly within the application. However, Chilax Studio values user feedback and suggestions, and we're constantly looking for ways to improve our product. Feel free to share your ideas and recommendations for new commands or features, and who knows, your input might just shape the future of Better Prompt!
 
 **Q: Does the program work on mobile, macOS or Linux?**
-A3: Unfortunately, this program is specifically for the Windows systems. It won't work on mobile, macOS or Linux without significant modifications.
+A3: Unfortunately, this program is specifically for the Windows systems, it is tested and made on Windows 11 and may not work on Windows 10 or below. It won't work on mobile, macOS or Linux without significant modifications.
 
 Experience the future of command-line interaction with Better Prompt, brought to you by Chilax Studio. Elevate your workflow, optimize your tasks, and discover a more efficient way to engage with your system through our innovative terminal emulator.
