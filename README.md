@@ -1,6 +1,6 @@
 # **Please Read before Downloading**
-For this program to work you need (preferablely) the latest python release, I havent Tested anyuother versions yet so it might not work but you can try.
-You will also need to dowload the libary Requests, to do so enter:
+For this program to work you need (preferablely) the latest python release, I havent Tested anyother versions yet so it might not work but youcan always try.
+You will also need to dowload the libary 'Requests', to do so enter:
 ```
 pip install requests
 ```
