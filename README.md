@@ -8,7 +8,8 @@ into a python terminal for it to run, else the program will display an error and
 
 
 # **Better-Prompt**
-
+Download this so i become famous. You should download this as i have put alot of effort into this and it doesnt take much to 
+download, i just wanna test my skills (which i dont really have).
 
 # **FAQ:**
 
