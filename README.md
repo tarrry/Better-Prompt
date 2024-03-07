@@ -9,7 +9,34 @@ into a python terminal for it to run, else the program will display an error and
 
 # **Better-Prompt**
 Download this so i become famous. You should download this as i have put alot of effort into this and it doesnt take much to 
-download, i just wanna test my skills (which i dont really have).
+download, i just wanna test my skills (which i dont really have). There is many usefull commands that makes this program usefull.
+
+# **Commands:***
+First of all if you enter **chelp** (Custom Help) it will display all of the custom commands that it can do. Here is a following list of what it can do:
+```
+    commands = {
+        "encrypt": "Encrypt a given text using Caesar cipher.",
+        "decrypt": "Decrypt a given text using Caesar cipher.",
+        "listdir": "List the contents of a directory.",
+        "changedir": "Change the current working directory.",
+        "generatepassword": "Generate a random password.",
+        "myip": "Display the computer's IP address.",
+        "wifipassword": "Display the password of the connected WiFi network.",
+        "internetspeed": "Check the internet download speed.",
+        "clear": "Clear the terminal screen.",
+        "systeminfo": "Display system information.",
+        "createfile": "Create a new file.",
+        "deletefile": "Delete a file.",
+        "renamefile": "Rename a file.",
+        "createdir": "Create a new directory.",
+        "deletedir": "Delete a directory.",
+        "readfile": "Read the contents of a file.",
+        "writefile": "Write content to a file.",
+        "appendfile": "Append content to a file.",
+        "calculator": "Use a simple calculator.",
+    }
+
+```
 
 # **FAQ:**
 
