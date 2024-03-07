@@ -57,4 +57,4 @@ python skills
 A3: Unfortunately, this program is specifically for the Windows systems, it is tested and made on Windows 11 and may not work on Windows 10 or below (it should work). It won't work on mobile, macOS or Linux without significant modifications.
 
 Thanks for reading :)
-                        -t4rrry
+                            -t4rrry
