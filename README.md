@@ -11,7 +11,7 @@ into a python terminal for it to run, else the program will display an error and
 Download this so i become famous. You should download this as i have put alot of effort into this and it doesnt take much to 
 download, i just wanna test my skills (which i dont really have). There is many usefull commands that makes this program usefull.
 
-# **Commands:***
+# **Commands:**
 First of all if you enter **chelp** (Custom Help) it will display all of the custom commands that it can do. Here is a following list of what it can do:
 ```
     commands = {
