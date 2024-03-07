@@ -35,8 +35,8 @@ First of all if you enter **chelp** (Custom Help) it will display all of the cus
         "appendfile": "Append content to a file.",
         "calculator": "Use a simple calculator.",
     }
-
 ```
+Not all commands are confirmed to work and could break, i will try my best to fix them whenever i have time, esspecially if there is a major one.
 
 # **FAQ:**
 
