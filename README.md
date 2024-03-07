@@ -1,4 +1,4 @@
-# **Please Read before Downloading*
+# *Please Read before Downloading*
 For this program to work you need (preferablely) the latest python release, I havent Tested anyuother versions yet so it might not work but you can try.
 You will also need to dowload the libary Requests, to do so enter:
 ```
